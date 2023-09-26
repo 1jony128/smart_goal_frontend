@@ -33,7 +33,7 @@ const OrgTaskPage: FC<OrgTaksPageProps> = ({}) => {
   }, []);
 
   return (
-    <VStack className={"h-full"} max>
+    <VStack className={"h-full p-4"} max>
       <h2 className={"text-2xl mb-3 mt-3"}>Все дела</h2>
       <Category>
         {category.map((item) => (

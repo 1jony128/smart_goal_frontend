@@ -4,7 +4,7 @@ import Category from "@/entities/Category/ui/Category.tsx";
 import { useDispatch, useSelector } from "react-redux";
 import { StateSchema } from "@/app/provider/StoreProvider/storeSchema.ts";
 import { TaskActions } from "@/entities/Task/models/slice/taskSlice.ts";
-import { HStack, VStack } from "@/shared/shared/ui/Stack";
+import { VStack } from "@/shared/shared/ui/Stack";
 
 interface OrgTaksPageProps {}
 

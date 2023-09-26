@@ -45,7 +45,7 @@ const OrgTaskPage: FC<OrgTaksPageProps> = ({}) => {
           />
         ))}
       </Category>
-    </Р>
+    </VStack>
   );
 };
 

@@ -27,13 +27,8 @@ export interface IInput {
   dirty: boolean;
 }
 
-export const useInput = (
-  initialValue: string,
-  placeholderInit?: string,
-  name?: string,
-): IInput => {
+export const useInput = (initialValue: string, name?: string): IInput => {
   const [value, setValue] = useState(initialValue);
-  const [placeholder, setPlaceholder] = useState(placeholderInit || "");
   const [label, setLabel] = useState("");
   const [error, setError] = useState(null);
   const [hover, setHover] = useState(false);
@@ -46,8 +41,6 @@ export const useInput = (
   const onDirty = useCallback((value: boolean) => {
     setDirty(value);
   }, []);
-
-  setPlaceholder("");
 
   const onChangeValue = useCallback((value: string) => {
     setValue(value);
@@ -77,7 +70,6 @@ export const useInput = (
     onBlur,
     onFocus,
     label,
-    placeholder,
     name,
     disabled,
     onDisabled,

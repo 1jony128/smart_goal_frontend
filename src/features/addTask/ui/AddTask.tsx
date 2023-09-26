@@ -15,7 +15,7 @@ const AddTask: FC<AddTaskProps> = ({ category_id }) => {
 
   const name = useInput("");
 
-  console.log(name);
+  console.log(category_id);
 
   const onAddTask = () => {
     dispatch(

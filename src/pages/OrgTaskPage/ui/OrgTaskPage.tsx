@@ -15,6 +15,7 @@ const OrgTaskPage: FC<OrgTaksPageProps> = ({}) => {
 
   useEffect(() => {
     if (localStorage.getItem("task")) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       dispatch(TaskActions.setTask(JSON.parse(localStorage.getItem("task"))));
     }
@@ -23,6 +24,7 @@ const OrgTaskPage: FC<OrgTaksPageProps> = ({}) => {
   useEffect(() => {
     if (localStorage.getItem("category")) {
       dispatch(
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         TaskActions.setCategory(JSON.parse(localStorage.getItem("category"))),
       );

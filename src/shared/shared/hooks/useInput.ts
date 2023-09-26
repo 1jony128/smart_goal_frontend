@@ -19,7 +19,6 @@ export interface IInput {
   onBlur: () => void;
   onFocus: () => void;
   label: string;
-  placeholder: string;
   name: string | undefined;
   disabled: boolean;
   onDisabled: () => void;

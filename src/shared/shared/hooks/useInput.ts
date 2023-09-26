@@ -9,10 +9,10 @@ import {
 export interface IInput {
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  onChangeValue: (value: string) => void;
-  setValue: Dispatch<SetStateAction<any>>;
-  setError: Dispatch<SetStateAction<any>>;
-  setHover: Dispatch<SetStateAction<any>>;
+  onChangeValue: (value: string) => void; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setValue: Dispatch<SetStateAction<any>>; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setError: Dispatch<SetStateAction<any>>; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setHover: Dispatch<SetStateAction<any>>; // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setLabel: Dispatch<SetStateAction<any>>;
   error: null | string;
   hover: boolean;
@@ -46,6 +46,8 @@ export const useInput = (
   const onDirty = useCallback((value: boolean) => {
     setDirty(value);
   }, []);
+
+  setPlaceholder("");
 
   const onChangeValue = useCallback((value: string) => {
     setValue(value);

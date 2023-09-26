@@ -1,7 +1,8 @@
-import React, { FC, useState } from "react";
+import { FC } from "react";
 import Task from "@/entities/Task/ui/Task.tsx";
 import { VStack } from "@/shared/shared/ui/Stack";
 import AddTask from "@/features/addTask/ui/AddTask.tsx";
+import { ITask } from "@/entities/Task/models/types";
 
 interface TaskListProps {
   tasks: ITask[];
@@ -10,10 +11,8 @@ interface TaskListProps {
 }
 
 const TaskList: FC<TaskListProps> = ({ tasks, category_id, category_name }) => {
-  const [hover, setHover] = useState(false);
-
   // Функция сравнения для сортировки задач
-  const compareTasks = (a, b) => {
+  const compareTasks = (a: any, b: any) => {
     // Сначала сортируем по выполнению (выполненные задачи будут внизу)
     if (a.completed && !b.completed) {
       return 1;
@@ -33,12 +32,7 @@ const TaskList: FC<TaskListProps> = ({ tasks, category_id, category_name }) => {
     .sort(compareTasks);
 
   return (
-    <VStack
-      onFocus={() => setHover(true)}
-      onBlur={() => setHover(false)}
-      className={"border border-muted p-3 px-8 rounded-md "}
-      gap={"8"}
-    >
+    <VStack className={"border border-muted p-3 px-8 rounded-md "} gap={"8"}>
       <span className={"text-xl underline underline-offset-4"}>
         {category_name}
       </span>

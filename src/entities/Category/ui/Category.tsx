@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import { HStack, VStack } from "@/shared/shared/ui/Stack";
 import AddCategory from "@/features/AddCategory/ui/AddCategory.tsx";
 interface CategoryProps {

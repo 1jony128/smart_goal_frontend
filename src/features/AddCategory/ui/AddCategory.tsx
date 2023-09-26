@@ -1,10 +1,11 @@
-import React, { FC, useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import { useDispatch } from "react-redux";
 import useInput from "@/shared/shared/hooks/useInput.ts";
 import { TaskActions } from "@/entities/Task/models/slice/taskSlice.ts";
 import { v4 as uuidv4 } from "uuid";
 import { HStack } from "@/shared/shared/ui/Stack";
+
 interface AddCategoryProps {}
 
 const AddCategory: FC<AddCategoryProps> = ({}) => {
@@ -18,6 +19,7 @@ const AddCategory: FC<AddCategoryProps> = ({}) => {
   const onAddTask = () => {
     setOpen(true);
     setTimeout(() => {
+      // @ts-ignore
       inputRef.current.focus();
     }, 100);
   };
@@ -26,14 +28,15 @@ const AddCategory: FC<AddCategoryProps> = ({}) => {
     if (e.key === "Enter") {
       dispatch(
         TaskActions.addCategory({
+          category_id: uuidv4(),
           category: name.value,
-          id: uuidv4(),
         }),
       );
       name.setValue("");
       setOpen(false);
     }
   };
+
   return (
     <HStack gap={"16"}>
       <AddIcon
@@ -41,7 +44,7 @@ const AddCategory: FC<AddCategoryProps> = ({}) => {
         onClick={onAddTask}
       />
       {open && (
-        <input
+        <input // @ts-ignore
           ref={inputRef}
           className={"border border-muted rounded p-1 px-2 outline-none"}
           {...name}

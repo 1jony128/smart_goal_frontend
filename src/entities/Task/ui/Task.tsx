@@ -2,14 +2,14 @@ import { FC, useState } from "react";
 import { ITask } from "@/entities/Task/models/types";
 import { HStack } from "@/shared/shared/ui/Stack";
 import classNames from "classnames";
-import { Delete, Edit } from "@mui/icons-material";
+import { Delete } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 import { TaskActions } from "@/entities/Task/models/slice/taskSlice.ts";
 import EditTask from "@/features/editTask/ui/EditTask.tsx";
 
 interface TaskProps extends ITask {}
 
-const Task: FC<TaskProps> = ({ date, name, completed, id }) => {
+const Task: FC<TaskProps> = ({ name, completed, id }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const dispatch = useDispatch();

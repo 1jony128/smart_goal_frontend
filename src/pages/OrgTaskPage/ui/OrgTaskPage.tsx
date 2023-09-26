@@ -15,6 +15,7 @@ const OrgTaskPage: FC<OrgTaksPageProps> = ({}) => {
 
   useEffect(() => {
     if (localStorage.getItem("task")) {
+      // @ts-ignore
       dispatch(TaskActions.setTask(JSON.parse(localStorage.getItem("task"))));
     }
   }, []);
@@ -22,6 +23,7 @@ const OrgTaskPage: FC<OrgTaksPageProps> = ({}) => {
   useEffect(() => {
     if (localStorage.getItem("category")) {
       dispatch(
+        // @ts-ignore
         TaskActions.setCategory(JSON.parse(localStorage.getItem("category"))),
       );
     }

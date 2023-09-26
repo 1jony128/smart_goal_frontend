@@ -4,6 +4,7 @@ import Category from "@/entities/Category/ui/Category.tsx";
 import { useDispatch, useSelector } from "react-redux";
 import { StateSchema } from "@/app/provider/StoreProvider/storeSchema.ts";
 import { TaskActions } from "@/entities/Task/models/slice/taskSlice.ts";
+import { HStack, VStack } from "@/shared/shared/ui/Stack";
 
 interface OrgTaksPageProps {}
 
@@ -32,7 +33,7 @@ const OrgTaskPage: FC<OrgTaksPageProps> = ({}) => {
   }, []);
 
   return (
-    <div className={"container mx-auto"}>
+    <VStack className={"h-full"} max>
       <h2 className={"text-2xl mb-3 mt-3"}>Все дела</h2>
       <Category>
         {category.map((item) => (
@@ -44,7 +45,7 @@ const OrgTaskPage: FC<OrgTaksPageProps> = ({}) => {
           />
         ))}
       </Category>
-    </div>
+    </Р>
   );
 };
 
